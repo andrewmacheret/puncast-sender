@@ -117,8 +117,8 @@ function startPunTimer(delay, callback) {
   loadPun(callback);
 }
 function loadPun(callback) {
-  $.ajax({url: 'pun', success: function(result) {
-    callback(result);
+  $.getJSON({url: 'https://pun.andrewmacheret.com', success: function(json) {
+    callback(json.pun);
   }});
 }
 
